@@ -1,0 +1,86 @@
+# NEXUS Communication Configuration
+# Configuração de comunicação para Slack e Discord
+
+# Configuração global
+enable_cross_platform: true
+message_timeout: 30.0
+retry_attempts: 3
+retry_delay: 1.0
+
+# Logging
+log_messages: true
+log_commands: true
+log_errors: true
+
+# Rate limiting
+rate_limit_enabled: true
+rate_limit_per_minute: 60
+rate_limit_per_hour: 1000
+
+# Configuração do Slack
+slack:
+  enabled: false  # Altere para true para habilitar
+  bot_token: "xoxb-your-bot-token-here"
+  app_token: "xapp-your-app-token-here"
+  signing_secret: "your-signing-secret-here"
+  
+  # Canais para notificações
+  channels:
+    - "C1234567890"  # ID do canal principal
+    - "C0987654321"  # ID do canal de desenvolvimento
+  
+  default_channel: "C1234567890"
+  
+  # Comandos
+  enable_slash_commands: true
+  enable_mentions: true
+  enable_events: true
+  
+  # Permissões
+  admin_users:
+    - "U1234567890"  # ID do usuário administrador
+  allowed_channels:
+    - "C1234567890"
+    - "C0987654321"
+  
+  # Notificações
+  notify_on_errors: true
+  notify_on_completion: true
+  notify_on_status_change: true
+
+# Configuração do Discord
+discord:
+  enabled: false  # Altere para true para habilitar
+  bot_token: "your-discord-bot-token-here"
+  guild_id: "123456789012345678"  # ID do servidor
+  
+  # Canais para notificações
+  channels:
+    - 123456789012345678  # ID do canal principal
+    - 987654321098765432  # ID do canal de desenvolvimento
+  
+  default_channel: 123456789012345678
+  
+  # Comandos
+  enable_slash_commands: true
+  enable_prefix_commands: true
+  command_prefix: "!nexus "
+  
+  # Permissões
+  admin_role_id: "123456789012345678"  # ID da role de administrador
+  allowed_roles:
+    - "123456789012345678"  # Role de desenvolvedor
+    - "987654321098765432"  # Role de admin
+  allowed_users:
+    - 123456789012345678  # ID do usuário específico
+  
+  # Notificações
+  notify_on_errors: true
+  notify_on_completion: true
+  notify_on_status_change: true
+  
+  # Cores dos embeds (hex)
+  default_color: 0x0099ff
+  success_color: 0x00ff00
+  warning_color: 0xff9900
+  error_color: 0xff0000
